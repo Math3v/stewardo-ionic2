@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of items$ | async">
+      {{ item.name__l.cz }}
+      <ion-note item-right>
+        {{ item.price__c.czk + ' CZK' }}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
