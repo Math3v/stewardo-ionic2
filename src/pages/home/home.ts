@@ -1,26 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { select } from 'ng2-redux';
 import { Observable } from 'rxjs/Observable';
 import { NavController } from 'ionic-angular';
-
-import { ItemsService } from './items.service';
-
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit {
+export class HomePage {
   @select('items') items$: Observable<any>;
   @select('itemsFilter') itemsFilter$: Observable<number>;
   @select('currentTabName') currentTabName$: Observable<any>;
 
   constructor(
-    public navCtrl: NavController,
-    private itemsService: ItemsService
+    public navCtrl: NavController
   ) {}
-
-  ngOnInit() {
-    this.itemsService.getItems();
-  }
 }

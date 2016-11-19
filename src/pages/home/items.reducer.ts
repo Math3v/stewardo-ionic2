@@ -6,6 +6,8 @@ export function itemsReducer(state: Array<any> = INITIAL_STATE, action: any): Ar
     switch(action.type) {
         case ItemsActions.ADD_ITEM:
             return [ ...state, action.payload ];
+        case ItemsActions.SET_ITEMS:
+            return action.payload;
         default:
             return state;
     }

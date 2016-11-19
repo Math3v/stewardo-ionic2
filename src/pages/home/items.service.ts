@@ -11,13 +11,11 @@ export class ItemsService {
         private http: Http,
         private itemsActions: ItemsActions,
         @Inject('api') private api
-    ){}
-
-    getItems(): Promise<any> {
-        return this.http.get(this.api+'foods.json')
-            .toPromise()
-            .then(response => response.json())
-            .then(items => items.map( item => this.itemsActions.addItem( item )))
-            .catch( error => console.error( error ));
+    ){
+        this.http.get(this.api+'foods.json')
+            .map(response => response.json())
+            .subscribe(
+                items => this.itemsActions.setItems( items ), 
+                error => console.error( error ));
     }
 }

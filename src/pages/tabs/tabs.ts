@@ -7,8 +7,10 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 
 import { TabsService } from '../tabs/tabs.service';
-import { ItemsActions } from '../home/items.actions';
 import { TabsActions } from '../tabs/tabs.actions';
+
+import { ItemsService } from '../home/items.service';
+import { ItemsActions } from '../home/items.actions';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -28,7 +30,8 @@ export class TabsPage implements OnInit {
   constructor(
     private tabsService: TabsService,
     private itemsActions: ItemsActions,
-    private tabsActions: TabsActions
+    private tabsActions: TabsActions,
+    private itemsService: ItemsService
   ) {}
 
   ngOnInit() {

@@ -11,6 +11,7 @@ export class ItemsActions {
 
     static ADD_ITEM: string = 'ADD_ITEM';
     static SET_FILTER: string = 'SET_FILTER';
+    static SET_ITEMS: string = 'SET_ITEMS';
 
     addItem( item: any ) {
         this.ngRedux.dispatch({ type: ItemsActions.ADD_ITEM, payload: item });
@@ -18,5 +19,9 @@ export class ItemsActions {
 
     setFilter(categoryId: number): void {
         this.ngRedux.dispatch({ type: ItemsActions.SET_FILTER, payload: categoryId });
+    }
+
+    setItems(items: Array<any>): void {
+        this.ngRedux.dispatch({ type: ItemsActions.SET_ITEMS, payload: items });
     }
 }
