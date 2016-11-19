@@ -17,7 +17,7 @@ export class TabsService {
             .toPromise()
             .then(response => response.json())
             .then(data => data.filter( (datum, index) => index < 4))
-            .then(data => data.map( datum => this.tabsActions.addTab( datum )))
+            .then(data => this.tabsActions.setTabs( data ))
             .catch( error => console.error( error ));
     }
 }

@@ -6,6 +6,8 @@ export function tabsReducer(state: Array<any> = INITIAL_STATE, action: any): Arr
     switch(action.type) {
         case TabsActions.ADD_TAB:
             return [ ...state, action.payload ];
+        case TabsActions.SET_TABS:
+            return action.payload;
         default:
             return state;
     }
