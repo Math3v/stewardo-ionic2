@@ -11,14 +11,12 @@ export class TabsService {
         private http: Http,
         private tabsActions: TabsActions,
         @Inject('api') private api
-    ) { }
-
-    getTabs(): Promise<any> {
-        return this.http.get(this.api+'categories.json')
-            .toPromise()
-            .then(response => response.json())
-            .then(data => data.filter( (datum, index) => index < 4))
-            .then(data => this.tabsActions.setTabs( data ))
-            .catch( error => console.error( error ));
+    ) { 
+        this.http.get(this.api+'categories.json')
+            .map(response => response.json())
+            .subscribe(
+                data => this.tabsActions.setTabs( data ),
+                error => console.error( error )
+            );
     }
 }

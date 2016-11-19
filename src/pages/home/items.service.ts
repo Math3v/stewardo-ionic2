@@ -16,6 +16,7 @@ export class ItemsService {
             .map(response => response.json())
             .subscribe(
                 items => this.itemsActions.setItems( items ), 
-                error => console.error( error ));
+                error => console.error( error )
+            );
     }
 }

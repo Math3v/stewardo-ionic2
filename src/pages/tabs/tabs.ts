@@ -6,21 +6,15 @@ import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 
-import { TabsService } from '../tabs/tabs.service';
 import { TabsActions } from '../tabs/tabs.actions';
-
-import { ItemsService } from '../home/items.service';
 import { ItemsActions } from '../home/items.actions';
 
 @Component({
   templateUrl: 'tabs.html'
 })
-export class TabsPage implements OnInit {
+export class TabsPage {
   @select('tabs') tabs$: Observable<any>;
-  tabs: Array<any> = [
-    { name__l: 'Test' },
-    { name__l: 'Rest' }
-  ];
+
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root: any = HomePage;
@@ -28,15 +22,9 @@ export class TabsPage implements OnInit {
   tab3Root: any = ContactPage;
 
   constructor(
-    private tabsService: TabsService,
     private itemsActions: ItemsActions,
     private tabsActions: TabsActions,
-    private itemsService: ItemsService
   ) {}
-
-  ngOnInit() {
-    this.tabsService.getTabs();
-  }
 
   onTabClick(tab: any) {
     this.itemsActions.setFilter( tab.id );
