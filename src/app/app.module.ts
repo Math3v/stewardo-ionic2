@@ -41,6 +41,7 @@ import { I18nPipe } from './i18n.pipe';
     TabsPage
   ],
   providers: [
+    {provide: 'api', useValue: 'http://localhost:3000/'},
     TabsService,
     TabsActions,
     ItemsService,

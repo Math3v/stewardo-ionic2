@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 import { TabsActions } from './tabs.actions';
 
@@ -9,11 +9,12 @@ export class TabsService {
 
     constructor(
         private http: Http,
-        private tabsActions: TabsActions
+        private tabsActions: TabsActions,
+        @Inject('api') private api
     ) { }
 
     getTabs(): Promise<any> {
-        return this.http.get('http://localhost:3000/categories.json')
+        return this.http.get(this.api+'categories.json')
             .toPromise()
             .then(response => response.json())
             .then(data => data.filter( (datum, index) => index < 4))

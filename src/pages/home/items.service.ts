@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 import { ItemsActions } from './items.actions';
 
@@ -9,11 +9,12 @@ export class ItemsService {
 
     constructor(
         private http: Http,
-        private itemsActions: ItemsActions
+        private itemsActions: ItemsActions,
+        @Inject('api') private api
     ){}
 
     getItems(): Promise<any> {
-        return this.http.get('http://localhost:3000/foods.json')
+        return this.http.get(this.api+'foods.json')
             .toPromise()
             .then(response => response.json())
             .then(items => items.map( item => this.itemsActions.addItem( item )))
