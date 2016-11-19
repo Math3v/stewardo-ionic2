@@ -13,6 +13,7 @@ import { ItemsService } from './items.service';
 export class HomePage implements OnInit {
   @select('items') items$: Observable<any>;
   @select('itemsFilter') itemsFilter$: Observable<number>;
+  @select('currentTabName') currentTabName$: Observable<any>;
 
   constructor(
     public navCtrl: NavController,

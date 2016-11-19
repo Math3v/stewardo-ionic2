@@ -9,6 +9,7 @@ export class TabsActions {
     ){}
 
     static ADD_TAB: string = 'ADD_TAB';
+    static SET_TAB: string = 'SET_TAB';
     static SET_TABS: string = 'SET_TABS';
 
     addTab(tab: any ): void {
@@ -17,5 +18,9 @@ export class TabsActions {
 
     setTabs(tabs: Array<any>): void {
         this.ngRedux.dispatch({ type: TabsActions.SET_TABS, payload: tabs });
+    }
+
+    setCurrentTab(tab: any): void {
+        this.ngRedux.dispatch({ type: TabsActions.SET_TAB, payload: tab });
     }
 }

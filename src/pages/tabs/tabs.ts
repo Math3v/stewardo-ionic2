@@ -8,6 +8,7 @@ import { ContactPage } from '../contact/contact';
 
 import { TabsService } from '../tabs/tabs.service';
 import { ItemsActions } from '../home/items.actions';
+import { TabsActions } from '../tabs/tabs.actions';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -26,7 +27,8 @@ export class TabsPage implements OnInit {
 
   constructor(
     private tabsService: TabsService,
-    private itemsActions: ItemsActions
+    private itemsActions: ItemsActions,
+    private tabsActions: TabsActions
   ) {}
 
   ngOnInit() {
@@ -35,5 +37,6 @@ export class TabsPage implements OnInit {
 
   onTabClick(tab: any) {
     this.itemsActions.setFilter( tab.id );
+    this.tabsActions.setCurrentTab( tab.name__l );
   }
 }

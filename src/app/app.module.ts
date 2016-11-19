@@ -16,6 +16,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TabsService } from '../pages/tabs/tabs.service';
 import { TabsActions } from '../pages/tabs/tabs.actions';
 
+import { I18nPipe } from './i18n.pipe';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +25,8 @@ import { TabsActions } from '../pages/tabs/tabs.actions';
     ContactPage,
     HomePage,
     TabsPage,
-    CategoryFilterPipe
+    CategoryFilterPipe,
+    I18nPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp),
