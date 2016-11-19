@@ -10,3 +10,12 @@ export function itemsReducer(state: Array<any> = INITIAL_STATE, action: any): Ar
             return state;
     }
 }
+
+export function itemsFilterReducer(state: number = 0, action: any): number {
+    switch(action.type) {
+        case ItemsActions.SET_FILTER:
+            return action.payload;
+        default:
+            return state;
+    }
+}

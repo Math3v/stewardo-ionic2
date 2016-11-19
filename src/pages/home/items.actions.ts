@@ -10,8 +10,13 @@ export class ItemsActions {
     ){}
 
     static ADD_ITEM: string = 'ADD_ITEM';
+    static SET_FILTER: string = 'SET_FILTER';
 
     addItem( item: any ) {
         this.ngRedux.dispatch({ type: ItemsActions.ADD_ITEM, payload: item });
+    }
+
+    setFilter(categoryId: number): void {
+        this.ngRedux.dispatch({ type: ItemsActions.SET_FILTER, payload: categoryId });
     }
 }

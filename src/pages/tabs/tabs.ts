@@ -7,6 +7,7 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 
 import { TabsService } from '../tabs/tabs.service';
+import { ItemsActions } from '../home/items.actions';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -24,10 +25,15 @@ export class TabsPage implements OnInit {
   tab3Root: any = ContactPage;
 
   constructor(
-    private tabsService: TabsService
+    private tabsService: TabsService,
+    private itemsActions: ItemsActions
   ) {}
 
   ngOnInit() {
     this.tabsService.getTabs();
+  }
+
+  onTabClick(tab: any) {
+    this.itemsActions.setFilter( tab.id );
   }
 }
