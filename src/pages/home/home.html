@@ -6,12 +6,11 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of items$ | async | categoryFilter: (itemsFilter$ | async)"
-      (click)="goToItem(item)">
-      {{ item.name__l | i18n }}
-      <ion-note item-right>
-        {{ item.price__c.czk + ' CZK' }}
-      </ion-note>
-    </ion-item>
+    <ion-item-group *ngFor="let category of items$ | async | categoryFilter: (itemsFilter$ | async)">
+      <ion-item-divider>{{ category.name__l | i18n }}</ion-item-divider>
+      <ion-item *ngFor="let item of category.foods">
+        {{ item.name__l | i18n }}
+      </ion-item>
+    </ion-item-group>
   </ion-list>
 </ion-content>

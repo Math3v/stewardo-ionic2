@@ -18,8 +18,8 @@ export class ItemsActions {
         this.ngRedux.dispatch({ type: ItemsActions.ADD_ITEM, payload: item });
     }
 
-    setFilter(foodType: string): void {
-        this.ngRedux.dispatch({ type: ItemsActions.SET_FILTER, payload: foodType });
+    setFilter(sectionId: number): void {
+        this.ngRedux.dispatch({ type: ItemsActions.SET_FILTER, payload: sectionId });
     }
 
     setItems(items: Array<any>): void {

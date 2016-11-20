@@ -2,8 +2,6 @@ import { Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 import { ItemsActions } from './items.actions';
 
-import 'rxjs/add/operator/toPromise';
-
 @Injectable()
 export class ItemsService {
 
@@ -12,7 +10,7 @@ export class ItemsService {
         private itemsActions: ItemsActions,
         @Inject('api') private api
     ){
-        this.http.get(this.api+'foods.json')
+        this.http.get(this.api+'categories.json')
             .map(response => response.json())
             .subscribe(
                 items => this.itemsActions.setItems( items ), 
