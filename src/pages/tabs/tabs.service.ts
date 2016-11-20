@@ -12,7 +12,7 @@ export class TabsService {
         private tabsActions: TabsActions,
         @Inject('api') private api
     ) { 
-        this.http.get(this.api+'categories.json')
+        this.http.get(this.api+'sections.json')
             .map(response => response.json())
             .subscribe(
                 data => this.tabsActions.setTabs( data ),

@@ -1,11 +1,11 @@
 <ion-tabs>
-  <!--<ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
   <ion-tab *ngFor="let tab of tabs$ | async" 
     [tabTitle]="tab.name__l | i18n" 
     [root]="tab1Root"
-    [rootParams]="tab.category_id"
-    (ionSelect)="onTabClick(tab)"></ion-tab>-->
-    <ion-tab [root]="tab1Root" tabTitle="Nápoje" rootParams="drink" (ionSelect)="onTabClick('drink')"></ion-tab>
-    <ion-tab [root]="tab1Root" tabTitle="Jídlo" rootParams="food" (ionSelect)="onTabClick('food')"></ion-tab>
-    <ion-tab [root]="tab2Root" tabTitle="Objednávka"></ion-tab>
+    [rootParams]="tab.id"
+    (ionSelect)="onTabClick(tab.id)"></ion-tab>
+<!--     <ion-tab [root]="tab1Root" tabTitle="Nápoje" rootParams="drink" (ionSelect)="onTabClick('drink')"></ion-tab>
+<ion-tab [root]="tab1Root" tabTitle="Jídlo" rootParams="food" (ionSelect)="onTabClick('food')"></ion-tab>
+<ion-tab [root]="tab2Root" tabTitle="Objednávka"></ion-tab> -->
 </ion-tabs>
