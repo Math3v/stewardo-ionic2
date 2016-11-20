@@ -6,7 +6,8 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of items$ | async | categoryFilter: (itemsFilter$ | async)">
+    <ion-item *ngFor="let item of items$ | async | categoryFilter: (itemsFilter$ | async)"
+      (click)="goToItem(item)">
       {{ item.name__l | i18n }}
       <ion-note item-right>
         {{ item.price__c.czk + ' CZK' }}

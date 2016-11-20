@@ -18,6 +18,8 @@ import { TabsActions } from '../pages/tabs/tabs.actions';
 
 import { I18nPipe } from './i18n.pipe';
 
+import { ItemPage } from '../pages/item/item';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +28,8 @@ import { I18nPipe } from './i18n.pipe';
     HomePage,
     TabsPage,
     CategoryFilterPipe,
-    I18nPipe
+    I18nPipe,
+    ItemPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -38,7 +41,8 @@ import { I18nPipe } from './i18n.pipe';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ItemPage
   ],
   providers: [
     {provide: 'api', useValue: 'http://localhost:3000/'},

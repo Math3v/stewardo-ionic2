@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button (click)="goBack()" ion-button>Back</button>
+        </ion-buttons>
+        <ion-title>
+            {{ (item$ | async).name__l | i18n }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    {{ item$ | async | json }}
+    <div>
+        <p>{{ (item$ | async).description__l | i18n }}</p>
+    </div>
+    <div>
+        <p>{{ (item$ | async).price__c | json }}</p>
+    </div>
+</ion-content>
