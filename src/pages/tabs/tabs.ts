@@ -26,8 +26,8 @@ export class TabsPage {
     private tabsActions: TabsActions,
   ) {}
 
-  onTabClick(tab: any) {
-    this.itemsActions.setFilter( tab.id );
-    this.tabsActions.setCurrentTab( tab.name__l );
+  onTabClick(type: string) {
+    this.itemsActions.setFilter( type );
+    this.tabsActions.setCurrentTab( type );
   }
 }

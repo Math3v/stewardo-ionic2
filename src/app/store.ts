@@ -5,7 +5,7 @@ import { itemsReducer, itemsFilterReducer, currentItemReducer } from '../pages/h
 export class IAppState {
   tabs?: Array<any>
   items?: Array<any>
-  itemsFilter?: number
+  itemsFilter?: string
   currentTabName?: any
   currentItem?: any
 }
