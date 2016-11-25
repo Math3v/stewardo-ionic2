@@ -18,7 +18,7 @@ export class ItemsActions {
         this.ngRedux.dispatch({ type: ItemsActions.ADD_ITEM, payload: item });
     }
 
-    setFilter(sectionId: number): void {
+    setSectionId(sectionId: number): void {
         this.ngRedux.dispatch({ type: ItemsActions.SET_FILTER, payload: sectionId });
     }
 

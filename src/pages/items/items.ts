@@ -6,10 +6,10 @@ import { ItemPage } from '../item/item';
 import { ItemsActions } from './items.actions';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-items',
+  templateUrl: 'items.html'
 })
-export class HomePage {
+export class ItemsPage {
   @select('items') items$: Observable<any>;
   @select('itemsFilter') itemsFilter$: Observable<number>;
   @select('currentTabName') currentTabName$: Observable<any>;

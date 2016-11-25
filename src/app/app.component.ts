@@ -8,7 +8,7 @@ import createLogger  from 'redux-logger';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { TabsService } from '../pages/tabs/tabs.service';
-import { ItemsService } from '../pages/home/items.service';
+import { ItemsService } from '../pages/items/items.service';
 
 @Component({
   template: `<ion-nav [root]="rootPage"></ion-nav>`

@@ -4,13 +4,12 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { NgReduxModule } from 'ng2-redux';
 
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
-import { HomePage } from '../pages/home/home';
-import { ItemsService } from '../pages/home/items.service';
-import { ItemsActions } from '../pages/home/items.actions';
-import { CategoryFilterPipe } from '../pages/home/categoryFilter.pipe';
+import { ItemsPage } from '../pages/items/items';
+import { ItemsService } from '../pages/items/items.service';
+import { ItemsActions } from '../pages/items/items.actions';
+import { CategoryFilterPipe } from '../pages/items/categoryFilter.pipe';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { TabsService } from '../pages/tabs/tabs.service';
@@ -23,9 +22,8 @@ import { ItemPage } from '../pages/item/item';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     ContactPage,
-    HomePage,
+    ItemsPage,
     TabsPage,
     CategoryFilterPipe,
     I18nPipe,
@@ -38,9 +36,8 @@ import { ItemPage } from '../pages/item/item';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     ContactPage,
-    HomePage,
+    ItemsPage,
     TabsPage,
     ItemPage
   ],

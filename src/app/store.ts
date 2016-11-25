@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { tabsReducer, currentTabReducer } from '../pages/tabs/tabs.reducer';
-import { itemsReducer, itemsFilterReducer, currentItemReducer } from '../pages/home/items.reducer';
+import { itemsReducer, itemsFilterReducer, currentItemReducer } from '../pages/items/items.reducer';
 
 export class IAppState {
   tabs?: Array<any>
