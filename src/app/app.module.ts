@@ -4,7 +4,6 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { NgReduxModule } from 'ng2-redux';
 
 import { MyApp } from './app.component';
-import { ContactPage } from '../pages/contact/contact';
 
 import { ItemsPage } from '../pages/items/items';
 import { ItemsService } from '../pages/items/items.service';
@@ -15,6 +14,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TabsService } from '../pages/tabs/tabs.service';
 import { TabsActions } from '../pages/tabs/tabs.actions';
 
+import { OrderPage } from '../pages/order/order';
+import { OrderService } from '../pages/order/order.service';
+import { OrderActions } from '../pages/order/order.actions';
+
 import { I18nPipe } from './i18n.pipe';
 
 import { ItemPage } from '../pages/item/item';
@@ -22,12 +25,12 @@ import { ItemPage } from '../pages/item/item';
 @NgModule({
   declarations: [
     MyApp,
-    ContactPage,
     ItemsPage,
     TabsPage,
     CategoryFilterPipe,
     I18nPipe,
-    ItemPage
+    ItemPage,
+    OrderPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -36,17 +39,19 @@ import { ItemPage } from '../pages/item/item';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ContactPage,
     ItemsPage,
     TabsPage,
-    ItemPage
+    ItemPage,
+    OrderPage
   ],
   providers: [
     {provide: 'api', useValue: 'http://localhost:3000/'},
     TabsService,
     TabsActions,
     ItemsService,
-    ItemsActions
+    ItemsActions,
+    OrderActions,
+    OrderService
   ]
 })
 export class AppModule {}
