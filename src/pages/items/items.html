@@ -4,12 +4,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-item-group *ngFor="let category of items$ | async | categoryFilter: (itemsFilter$ | async)">
       <ion-item-divider>{{ category.name__l | i18n }}</ion-item-divider>
-      <ion-item *ngFor="let item of category.foods">
+      <ion-item *ngFor="let item of category.foods"
+        (click)="goToItem(item)">
         {{ item.name__l | i18n }}
+        <ion-note item-right>{{ item.price__c.czk }}</ion-note>
+        <button ion-button item-right 
+          color="secondary" (click)="orderItem($event, item)">
+          <ion-icon name="cart"></ion-icon>
+        </button>
       </ion-item>
     </ion-item-group>
   </ion-list>

@@ -7,12 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>order</ion-title>
+    <ion-title>Objednávka</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-item *ngFor="let orderItem of orderItems$ | async">
+    {{ orderItem.name__l | i18n }}
+    <ion-note item-right>{{ orderItem.price__c.czk }}</ion-note>
+  </ion-item>
 </ion-content>
