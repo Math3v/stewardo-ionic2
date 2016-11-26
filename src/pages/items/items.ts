@@ -31,12 +31,13 @@ export class ItemsPage {
     event.stopPropagation();
     this.presentOrderToast();
     this.orderActions.addOrderItem(item);
+    this.orderActions.incrementOrderBadge();
   }
 
   presentOrderToast(): void {
     this.toastCtrl.create({
       message: 'Položka objednaná!',
-      position: 'bottom',
+      position: 'top',
       duration: 2500
     }).present();
   }

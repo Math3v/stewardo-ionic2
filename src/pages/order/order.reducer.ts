@@ -10,3 +10,14 @@ export function orderItemsReducer(state: Array<any> = INITIAL_STATE, action: any
             return state;
     }
 }
+
+export function orderBadgeReducer(state: number = 0, action: any): number {
+    switch(action.type) {
+        case OrderActions.INC_ORDER_BADGE:
+            return state + 1;
+        case OrderActions.DEL_ORDER_BADGE:
+            return 0;
+        default:
+            return state;
+    }
+}

@@ -4,5 +4,7 @@
     [root]="tab1Root"
     [rootParams]="tab.id"
     (ionSelect)="onTabClick(tab.id)"></ion-tab>
-    <ion-tab [root]="tab2Root" tabTitle="Objednávka"></ion-tab>
+    <ion-tab [root]="tab2Root" 
+      tabTitle="Objednávka"
+      [tabBadge]="orderBadge$ | async"></ion-tab>
 </ion-tabs>

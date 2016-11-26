@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { select } from 'ng2-redux';
 import { Observable } from 'rxjs/Observable';
 
+import { OrderActions } from './order.actions';
+
 /*
   Generated class for the Order page.
 
@@ -16,5 +18,12 @@ import { Observable } from 'rxjs/Observable';
 export class OrderPage {
   @select('orderItems') orderItems$: Observable<any>;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(
+    public navCtrl: NavController,
+    private orderActions: OrderActions  
+  ) {}
+
+  ionViewDidEnter() {
+    this.orderActions.resetOrderBadge();
+  }
 }

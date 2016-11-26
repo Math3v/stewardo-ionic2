@@ -7,13 +7,13 @@ import { OrderPage } from '../order/order';
 
 import { TabsActions } from '../tabs/tabs.actions';
 import { ItemsActions } from '../items/items.actions';
-import { OrderActions } from '../order/order.actions';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
   @select('tabs') tabs$: Observable<any>;
+  @select('orderBadge') orderBadge$: Observable<number>;
 
   // this tells the tabs component which Pages
   // should be each tab's root Page

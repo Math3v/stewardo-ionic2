@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { tabsReducer, currentTabReducer } from '../pages/tabs/tabs.reducer';
 import { itemsReducer, itemsFilterReducer, currentItemReducer } from '../pages/items/items.reducer';
-import { orderItemsReducer } from '../pages/order/order.reducer';
+import { orderItemsReducer, orderBadgeReducer } from '../pages/order/order.reducer';
 
 export class IAppState {
   tabs?: Array<any>
@@ -10,6 +10,7 @@ export class IAppState {
   itemsFilter?: number
   currentTabName?: any
   currentItem?: any
+  orderBadge?: number
 }
 
 export const rootReducer = combineReducers<IAppState>({
@@ -18,5 +19,6 @@ export const rootReducer = combineReducers<IAppState>({
   itemsFilter: itemsFilterReducer,
   currentTabName: currentTabReducer,
   currentItem: currentItemReducer,
-  orderItems: orderItemsReducer
+  orderItems: orderItemsReducer,
+  orderBadge: orderBadgeReducer
 });
