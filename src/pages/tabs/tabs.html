@@ -3,7 +3,7 @@
     [tabTitle]="tab.name__l | i18n" 
     [root]="tab1Root"
     [rootParams]="tab.id"
-    (ionSelect)="onTabClick(tab.id)"></ion-tab>
+    (ionSelect)="onTabClick(tab)"></ion-tab>
     <ion-tab [root]="tab2Root" 
       tabTitle="Objednávka"
       [tabBadge]="orderBadge$ | async"></ion-tab>

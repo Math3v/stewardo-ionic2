@@ -25,8 +25,8 @@ export class TabsPage {
     private tabsActions: TabsActions,
   ) {}
 
-  onTabClick(id: number) {
-    this.itemsActions.setSectionId( id );
-    this.tabsActions.setCurrentTab( id );
+  onTabClick(tab: any) {
+    this.itemsActions.setSectionId( tab.id );
+    this.tabsActions.setCurrentTab( tab.name__l );
   }
 }
