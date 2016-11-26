@@ -19,6 +19,7 @@ import { OrderService } from '../pages/order/order.service';
 import { OrderActions } from '../pages/order/order.actions';
 
 import { I18nPipe } from './i18n.pipe';
+import { PricePipe } from './price.pipe';
 
 import { ItemPage } from '../pages/item/item';
 
@@ -30,7 +31,8 @@ import { ItemPage } from '../pages/item/item';
     CategoryFilterPipe,
     I18nPipe,
     ItemPage,
-    OrderPage
+    OrderPage,
+    PricePipe
   ],
   imports: [
     IonicModule.forRoot(MyApp),

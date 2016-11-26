@@ -9,12 +9,11 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    {{ item$ | async | json }}
+<ion-content padding>
     <div>
         <p>{{ (item$ | async).description__l | i18n }}</p>
     </div>
     <div>
-        <p>{{ (item$ | async).price__c | json }}</p>
+        <p>{{ (item$ | async).price__c | price }}</p>
     </div>
 </ion-content>
