@@ -12,6 +12,7 @@ export class OrderActions {
     static DEL_ORDER_ITEM: string = 'DEL_ORDER_ITEM';
     static INC_ORDER_BADGE: string = 'INC_ORDER_BADGE';
     static DEL_ORDER_BADGE: string = 'DEL_ORDER_BADGE';
+    static DEL_ORDER_ALL: string = 'DEL_ORDER_ALL';
 
     addOrderItem(item: any): void {
         this.ngRedux.dispatch({ type: OrderActions.ADD_ORDER_ITEM, payload: item });
@@ -27,5 +28,9 @@ export class OrderActions {
 
     resetOrderBadge(): void {
         this.ngRedux.dispatch({ type: OrderActions.DEL_ORDER_BADGE });
+    }
+
+    deleteAll(): void {
+        this.ngRedux.dispatch({ type: OrderActions.DEL_ORDER_ALL });
     }
 }

@@ -30,6 +30,8 @@ export function orderItemsReducer(state: Array<any> = INITIAL_STATE, action: any
                 action.payload.count = 1;
                 return [ ...state, action.payload ];
             }
+        case OrderActions.DEL_ORDER_ALL:
+            return INITIAL_STATE;
         default:
             return state;
     }

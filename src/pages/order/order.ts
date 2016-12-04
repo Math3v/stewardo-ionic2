@@ -38,4 +38,8 @@ export class OrderPage {
       error => console.error( 'Error: ', error )
     );
   }
+
+  deleteOrderItems() {
+    this.orderActions.deleteAll();
+  }
 }

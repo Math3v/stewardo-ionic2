@@ -6,9 +6,15 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>Objednávka</ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-right (click)="deleteOrderItems()">
+        Zaplatit
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
