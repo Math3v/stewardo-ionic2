@@ -53,7 +53,8 @@ import { ItemPage } from '../pages/item/item';
     ItemsService,
     ItemsActions,
     OrderActions,
-    OrderService
+    OrderService,
+    I18nPipe
   ]
 })
 export class AppModule {}

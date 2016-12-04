@@ -51,3 +51,8 @@ i.icon {
         background-image: url('../assets/icon/food/193.png');
     }
 }
+
+.ordered-toast .toast-wrapper {
+    background-color: map-get($colors, primary);
+    opacity: 0.85;
+}
