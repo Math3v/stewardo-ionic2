@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+i.icon {
+
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: sub;
+
+    &.coffee {
+        background-image: url('../assets/icon/food/173.png');
+    }
+
+    &.tea {
+        background-image: url('../assets/icon/food/195.png');
+    }
+
+    &.drink {
+        background-image: url('../assets/icon/food/105.png');
+    }
+
+    &.cake {
+        background-image: url('../assets/icon/food/68.png');
+    }
+
+    &.soup {
+        background-image: url('../assets/icon/food/102.png');
+    }
+
+    &.main {
+        background-image: url('../assets/icon/food/176.png');
+    }
+
+    &.side {
+        background-image: url('../assets/icon/food/193.png');
+    }
+}

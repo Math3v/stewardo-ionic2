@@ -7,14 +7,16 @@
 <ion-content>
   <ion-list>
     <ion-item-group *ngFor="let category of items$ | async | categoryFilter: (itemsFilter$ | async)">
-      <ion-item-divider><b>{{ category.name__l | i18n }}</b></ion-item-divider>
+      <ion-item-divider>
+        <i class="icon" [ngClass]="category.icon"></i>
+        <b>{{ category.name__l | i18n }}</b>
+      </ion-item-divider>
       <ion-item *ngFor="let item of category.foods"
         (click)="goToItem(item)">
         {{ item.name__l | i18n }}
         <ion-note item-right>{{ item.price__c | price }}</ion-note>
-        <button ion-button item-right 
-          color="secondary" (click)="orderItem($event, item)">
-          <ion-icon name="cart"></ion-icon>
+        <button ion-button item-right (click)="orderItem($event, item)">
+          Objednat
         </button>
       </ion-item>
     </ion-item-group>
