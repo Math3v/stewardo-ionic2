@@ -18,6 +18,8 @@ import { OrderActions } from './order.actions';
 export class OrderPage {
   @select('orderItems') orderItems$: Observable<any>;
 
+  orderSum: number = 0;
+
   constructor(
     public navCtrl: NavController,
     private orderActions: OrderActions  
@@ -25,5 +27,15 @@ export class OrderPage {
 
   ionViewDidEnter() {
     this.orderActions.resetOrderBadge();
+    this.together();
+  }
+
+  together() {
+    this.orderItems$.subscribe(
+      data => this.orderSum = data.reduce((acc, curr) => {
+        return acc + (curr.count * curr.price__c.czk);
+      }, 0),
+      error => console.error( 'Error: ', error )
+    );
   }
 }
