@@ -14,10 +14,8 @@
       <ion-item *ngFor="let item of category.foods"
         (click)="goToItem(item)">
         {{ item.name__l | i18n }}
-        <ion-note item-right>{{ item.price__c | price }}</ion-note>
-        <button ion-button item-right (click)="orderItem($event, item)">
-          Objednat
-        </button>
+        <ion-note item-right>{{ item.price__c | price:1 }}</ion-note>
+        <ion-icon item-right name="basket" (click)="orderItem($event, item)"></ion-icon>
       </ion-item>
     </ion-item-group>
   </ion-list>

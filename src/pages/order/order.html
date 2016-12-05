@@ -23,6 +23,7 @@
   <ion-item *ngFor="let orderItem of orderItems$ | async">
     {{ orderItem.name__l | i18n }}
     <ion-note item-right>{{ orderItem.count }}</ion-note>
+    <ion-note item-right>&#10005;</ion-note>
     <ion-note item-right>{{ orderItem.price__c | price:orderItem.count }}</ion-note>
   </ion-item>
   <ion-item>
