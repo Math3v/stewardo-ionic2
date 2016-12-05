@@ -47,7 +47,7 @@ import { ItemPage } from '../pages/item/item';
     OrderPage
   ],
   providers: [
-    {provide: 'api', useValue: 'http://localhost:3000/'},
+    {provide: 'api', useValue: 'https://boiling-cove-51767.herokuapp.com/'},
     TabsService,
     TabsActions,
     ItemsService,
