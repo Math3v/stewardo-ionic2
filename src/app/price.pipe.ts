@@ -4,10 +4,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PricePipe implements PipeTransform {
     
     transform(object: any, count: number): string {
-        if( count ) {
-            return (object.czk * count) + ' CZK';
-        } else {
-            return object.czk + ' CZK';
-        }
+        return (object.czk * count) + ' ,-';
     }
 }

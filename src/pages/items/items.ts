@@ -17,9 +17,6 @@ export class ItemsPage {
   @select('itemsFilter') itemsFilter$: Observable<number>;
   @select('currentTabName') currentTabName$: Observable<any>;
 
-  static TOAST_DISMISS_TIMER: string = 'backdrop';
-  static TOAST_DISMISS_CLOSE: string = 'close';
-
   constructor(
     public navCtrl: NavController,
     private toastCtrl: ToastController,
@@ -51,7 +48,7 @@ export class ItemsPage {
     toast.onDidDismiss(function() {
       let dismissContext = arguments[1];
       
-      if( dismissContext && dismissContext === ItemsPage.TOAST_DISMISS_TIMER ) {  
+      if( dismissContext && dismissContext === 'backdrop' ) {  
         orderActions.addOrderItem(item);
         orderActions.incrementOrderBadge();
       }
