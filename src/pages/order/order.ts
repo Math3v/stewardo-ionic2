@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { select } from 'ng2-redux';
 import { Observable } from 'rxjs/Observable';
 
 import { OrderActions } from './order.actions';
+
+import { DeviceService } from '../../app/device.service';
 
 /*
   Generated class for the Order page.
@@ -15,15 +17,21 @@ import { OrderActions } from './order.actions';
   selector: 'page-order',
   templateUrl: 'order.html'
 })
-export class OrderPage {
+export class OrderPage implements OnInit {
   @select('orderItems') orderItems$: Observable<any>;
 
   orderSum: number = 0;
+  deviceInfo: any = {};
 
   constructor(
     public navCtrl: NavController,
-    private orderActions: OrderActions  
-  ) {}
+    private orderActions: OrderActions,
+    private deviceService: DeviceService
+  ) { }
+
+  ngOnInit() {
+    this.getDeviceInfo();
+  }
 
   ionViewDidEnter() {
     this.orderActions.resetOrderBadge();
@@ -41,5 +49,11 @@ export class OrderPage {
 
   deleteOrderItems() {
     this.orderActions.deleteAll();
+  }
+
+  getDeviceInfo() {
+    this.deviceService.getDeviceInfo().then((deviceInfo) => {
+      this.deviceInfo = deviceInfo;
+    })
   }
 }
