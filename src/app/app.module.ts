@@ -23,6 +23,8 @@ import { PricePipe } from './price.pipe';
 
 import { ItemPage } from '../pages/item/item';
 
+import { DeviceService } from './device.service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -54,7 +56,8 @@ import { ItemPage } from '../pages/item/item';
     ItemsActions,
     OrderActions,
     OrderService,
-    I18nPipe
+    I18nPipe,
+    DeviceService
   ]
 })
 export class AppModule {}
