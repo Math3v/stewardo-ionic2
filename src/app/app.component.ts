@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { NgRedux } from 'ng2-redux';
-import { IAppState, rootReducer } from './store';
-import createLogger  from 'redux-logger';
+import { rootReducer } from './store';
 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
-import { TabsService } from '../pages/tabs/tabs.service';
-import { ItemsService } from '../pages/items/items.service';
 
 @Component({
   template: `<ion-nav [root]="rootPage"></ion-nav>`
@@ -18,17 +16,17 @@ export class MyApp {
 
   constructor(
     private platform: Platform,
-    private ngRedux: NgRedux<IAppState>,
-    private tabsService: TabsService,
-    private itemsService: ItemsService
-    ) {
-    platform.ready().then(() => {
+    private ngRedux: NgRedux<any>,
+    private statusBar: StatusBar,
+    private splashScreen: SplashScreen,
+  ) {
+    this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
 
-    ngRedux.configureStore(rootReducer, {}, [ createLogger() ]);
+    this.ngRedux.configureStore(rootReducer, {}, []);
   }
 }

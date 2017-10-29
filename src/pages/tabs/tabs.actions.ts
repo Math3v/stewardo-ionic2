@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
-import { IAppState } from '../../app/store';
 
 @Injectable()
 export class TabsActions {
     constructor(
-        private ngRedux: NgRedux<IAppState>
+        private ngRedux: NgRedux<any>
     ){}
 
     static ADD_TAB: string = 'ADD_TAB';
