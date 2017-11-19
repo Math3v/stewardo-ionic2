@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { NgReduxModule } from 'ng2-redux';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
 
@@ -23,8 +27,6 @@ import { PricePipe } from './price.pipe';
 
 import { ItemPage } from '../pages/item/item';
 
-import { DeviceService } from './device.service';
-
 @NgModule({
   declarations: [
     MyApp,
@@ -37,8 +39,10 @@ import { DeviceService } from './device.service';
     PricePipe
   ],
   imports: [
+    BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
-    NgReduxModule.forRoot()
+    NgReduxModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,6 +53,9 @@ import { DeviceService } from './device.service';
     OrderPage
   ],
   providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: 'api', useValue: 'https://boiling-cove-51767.herokuapp.com/'},
     TabsService,
     TabsActions,
@@ -57,7 +64,6 @@ import { DeviceService } from './device.service';
     OrderActions,
     OrderService,
     I18nPipe,
-    DeviceService
   ]
 })
 export class AppModule {}

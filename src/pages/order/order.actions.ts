@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
-import { IAppState } from '../../app/store';
 
 @Injectable()
 export class OrderActions {
     constructor(
-        private ngRedux: NgRedux<IAppState>
+        private ngRedux: NgRedux<any>
     ){}
 
     static ADD_ORDER_ITEM: string = 'ADD_ORDER_ITEM';
